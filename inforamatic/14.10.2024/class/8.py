@@ -37,5 +37,5 @@ for k in range(15):
     for i in product("0123456789", repeat=k):
         i = "".join(i)
         if d(q(i)):
-            s =
+            pass
 
