@@ -18,4 +18,4 @@ for i in a:
 arr.sort(key = len)
 
 for i in arr:
-    print(i, len(i)-i.count("*"))
+    print(i, i.count("*")+ 1)
