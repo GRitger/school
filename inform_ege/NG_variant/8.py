@@ -1,7 +1,7 @@
 from itertools import *
 
 a = []
-for i in product("аизм", repeat=5):
+for i in product("азим", repeat=5):
     x = "".join(i)
     if x.count("а") + x.count("и") == 1:
         a.append(x)
