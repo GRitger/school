@@ -1,42 +1,14 @@
-dist = {
-"а" : "ч",
-"б" : "я",
-"в" : "ю",
-"г" : "э",
-"д" : "ы",
-"е" : "ь",
-"ж" : "щ",
-"з" : "ш",
-"и" : "ц",
-"к" : "х",
-"л" : "ф",
-"м" : "у",
-"н" : "б",
-"о" : "д",
-"п" : "т",
-"р" : "з",
-"с" : "в",
-"т" : "р",
-"у" : "п",
-"ф" : "м",
-"х" : "л",
-"ц" : "к",
-"ч" : "а",
-"ш" : "и",
-"щ" : "о",
-"ь" : "ж",
-"ы" : "е",
-"э" : "с",
-"ю" : "г",
-"я" : "н"
-}
-
-a= []
-st = "книга"
-#while not(dist[st[0]]+dist[st[1]]+dist[st[2]]+dist[st[3]]+dist[st[4]] in a):
-for i in range(400):
-    a.append(dist[st[0]]+dist[st[1]]+dist[st[2]]+dist[st[3]]+dist[st[4]])
-    st = dist[st[0]]+dist[st[1]]+dist[st[2]]+dist[st[3]]+dist[st[4]]
-print(len(a))
-for i in range(400):
-    print(i, a[i])
+def f(x):
+    st = ""
+    while x:
+        st = str(x%9) + st
+        x = x //9
+    return st
+m = -1
+ans = 0
+for i in range(1, 2000):
+    qwe = f(9**250 + 9**150 - i)
+    if qwe.count("1") >= m:
+        m = qwe.count("1")
+        ans = i
+print(ans)

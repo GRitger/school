@@ -1,9 +1,9 @@
-from itertools import *
-v = 0
-p = 0
-for i in permutations("0000000111", 6):
-    st = "".join(i)
-    v += 1
-    if st.count("1") == 3:
-        p += 1
-print(p)
+from ipaddress import ip_network
+k = 0
+for ip in ip_network('94.149.96.0/255.255.224.0', 0):
+    p = f'{int(ip):032b}'
+    if p.count('1')%3==0 and p[-2:]=='11':
+        k+=1
+        print(p)
+
+print(k)

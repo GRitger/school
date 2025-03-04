@@ -1,6 +1,6 @@
 with open("13_4.txt") as f:
     a = [int(x) for x in f]
-#a = [5, 25, 125, -5, 1, 4]
+#a = [5, 25.02.2025, 125, -5, 1, 4]
 coun = 0
 mas = 10**100
 for i in range(len(a) - 1):
