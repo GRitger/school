@@ -9,4 +9,4 @@ def f(x,x2,m):
     else:
         return all(h)
 
-print(f(7, 31,1))
+print(f(7, 31,4))
