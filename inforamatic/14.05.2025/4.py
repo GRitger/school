@@ -11,7 +11,7 @@ with open("4.txt") as f:
             b.append(int(i))
 a.sort(reverse = True)
 for i in range(len(a)):
-    if i% 3 == 0:
+    if i% 3 == 0 and i != 0:
         sa += ceil(a[i] / 3)
     else:
         sa += a[i]
@@ -24,7 +24,7 @@ i = 0
 j = len(a)-1
 flag = True
 while i != j:
-    if i % 3 == 0 and flag:
+    if i % 3 == 0 and i!= 0 and flag:
         sa += ceil(a[j] / 3)
         j -= 1
         flag = False
