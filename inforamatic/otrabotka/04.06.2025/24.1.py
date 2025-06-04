@@ -1,21 +1,29 @@
-from string import ascii_uppercase
+from string import ascii_uppercase, ascii_lowercase
+
 with open("24-332.txt") as f:
     st = f.readline()
-st = st.replace("  ", ".")
 alf = ascii_uppercase
-for i in alf:
+for i in ascii_uppercase:
     st = st.replace(i, "A")
-a = []
-begin = st.find("A")
-end = st.find(".")
-while begin != -1:
-    temp = st[begin:end+1]
-    st = st[begin+1:]
-    a.append(temp)
-    begin = st.find("A")
-    end = st.find(".")
-
-a.sort(key = len)
-print(a)
+for i in ascii_lowercase:
+    st = st.replace(i, "b")
+st = st.replace("  ", "*")
+st = st.replace(" .", "*")
+st = st.replace(".", ".*")
+st = st.replace("bA", "b*A")
+ans = []
+while "AA" in st:
+    st = st.replace("AA", "A*A")
+a = st.split("*")
+a.sort(key=len)
+for i in a:
+    b = i.find("A")
+    if b == -1:
+        continue
+    i = i[b:]
+    if i[-1] == ".":
+        ans.append(i)
+ans.sort(key=len)
+print(len(ans[-1]))
 
 
