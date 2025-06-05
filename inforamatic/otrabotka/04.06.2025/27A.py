@@ -1,6 +1,3 @@
-from math import dist
-
-
 def fu(cl1):
     ans1 = [x for x, y in cl1]
     ans2 = [y for x, y in cl1]
